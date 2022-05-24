@@ -1,11 +1,11 @@
 [
-    {
-      "id": 1,
-      "name": "Pack Pepe",
-      "price": "0.09",
-      "description": "5 images of pepe in different facets and activities",
-      "image_url": "https://gateway.pinata.cloud/ipfs/QmQ59YT5EAtDd95kyXDZyhpzaaC7EgjNChVHrHh7BhpHev",
-      "filename": "pack1.zip",
-      "hash": "QmQtRJSBBn18MUEHFZkjSqytKevfDyYtKu96HzTNJYqtoi"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Pack Pepe",
+    "price": "1",
+    "description": "5 images of pepe in different facets and activities",
+    "image_url": "https://gateway.pinata.cloud/ipfs/QmQ59YT5EAtDd95kyXDZyhpzaaC7EgjNChVHrHh7BhpHev",
+    "filename": "pack1.zip",
+    "hash": "QmQtRJSBBn18MUEHFZkjSqytKevfDyYtKu96HzTNJYqtoi"
+  }
+]

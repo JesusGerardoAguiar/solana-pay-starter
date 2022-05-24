@@ -4,6 +4,7 @@ import { PublicKey } from "@solana/web3.js";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import Product from "../components/Product";
+import CreateProduct from '../components/CreateProduct';
 // Constants
 const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
@@ -11,7 +12,9 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const App = () => {
   // This will fetch the users' public key (wallet address) from any wallet we support
   const { publicKey } = useWallet();
-const [products, setProducts] = useState([]);
+  const isOwner = ( publicKey ? publicKey.toString() === process.env.NEXT_PUBLIC_OWNER_PUBLIC_KEY : false );
+  const [creating, setCreating] = useState(false);
+  const [products, setProducts] = useState([]);
   const renderNotConnectedContainer = () => (
     <div>
       <img src="/home/homepepe.jpeg" alt="emoji" />
@@ -48,9 +51,15 @@ const [products, setProducts] = useState([]);
         </header>
 
         <main>
+          {creating && <CreateProduct />}
           {publicKey ? renderItemBuyContainer() : renderNotConnectedContainer()}
         </main>
 
+        {isOwner && (
+            <button className="create-product-button" onClick={() => setCreating(!creating)}>
+              {creating ? "Close" : "Create Product"}
+            </button>
+          )}
         <div className="footer-container">
           <img
             alt="Twitter Logo"
@@ -62,7 +71,7 @@ const [products, setProducts] = useState([]);
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`built on @jeezuzdev`}</a>
         </div>
       </div>
     </div>
